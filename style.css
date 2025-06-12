@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #F9F6F0;
+  color: #333;
+  line-height: 1.8;
+  font-size: 16px;
+  padding: 40px 20px 60px;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 10px;
+  margin-bottom: 40px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(109, 151, 115, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: #6D9773;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a:hover{
+    background-color: #e8cef0;
+
+}
+nav a:focus {
+  background-color: #C6A0D2;
+  color: white;
+  outline: none;
+}
+
+
+#home {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 5rem;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(109, 151, 115, 0.1);
+}
+
+#home img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 4px solid #A3C4A8;
+}
+
+#home .intro {
+  flex: 1;
+}
+
+#home .intro p {
+  font-size: 1.1rem;
+  color: #6D9773;
+  margin-top: 10px;
+}
+
+
+h1, h2, h3 {
+  color: #6D9773;
+  margin-bottom: 1rem;
+  font-weight: 700;
+   font-family: 'Poppins', sans-serif;
+}
+body, p, li {
+  font-family: 'Roboto', sans-serif;
+}
+h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid #A3C4A8;
+  padding-bottom: 6px;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #C6A0D2;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cv-link:hover {
+  background-color: #E8B4B8;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+#projects .project-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(198, 160, 210, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 20px rgba(198, 160, 210, 0.35);
+}
+
+.project-card h3 {
+  color: #C6A0D2;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: #555;
+  line-height: 1.4;
+}
+
+#blog {
+  margin-bottom: 4rem;
+}
+
+.blog-post {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(198, 160, 210, 0.15);
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  box-shadow: 0 6px 20px rgba(198, 160, 210, 0.35);
+}
+
+.blog-post h3 {
+  color: #C6A0D2;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.blog-date {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.blog-post p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  color: #C6A0D2;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: #E8B4B8;
+}
+
+
+#contact {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(232, 180, 184, 0.2);
+  max-width: 600px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+#contact label {
+  text-align: left;
+  font-weight: 600;
+  color: #6D9773;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border: 1.5px solid #A3C4A8;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #6D9773;
+  outline: none;
+}
+
+#contact button {
+  background-color: #6D9773;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #A3C4A8;
+}
+
+.contact-info {
+  font-size: 1rem;
+  color: #6D9773;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: #C6A0D2;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #E8B4B8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  color: #6D9773;
+  border-top: 1px solid #A3C4A8;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #projects .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 20px 10px;
+  }
+
+  #home img {
+    width: 140px;
+    height: 140px;
+  }
+}
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #A3C4A8;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #6D9773;
+}
+.contact-icons a {
+  color: #6D9773; /* your green */
+  font-size: 2rem; /* bigger icons */
+  margin: 0 12px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.contact-icons a:hover {
+  color: #C6A0D2; /* your purple hover */
+  cursor: pointer;
+}
+/* Color Scheme Explanation:
+   - Primary Green (#6D9773): Represents growth, creativity, and calmness.
+   - Soft Purple (#C6A0D2): Adds a touch of creativity and elegance.
+   - Light Background (#F9F6F0): Keeps the site clean and easy on the eyes.
+   This palette reflects a calm and creative vibe, perfect for a young web designer's portfolio.
+*/
