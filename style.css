@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #F9F6F0;
@@ -15,6 +20,33 @@ body {
   margin: auto;
 }
 
+h1, h2, h3 {
+  color: #6D9773;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 2.8rem;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 3px solid #A3C4A8;
+  padding-bottom: 6px;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+body, p, li {
+  font-family: 'Roboto', sans-serif;
+}
 
 nav {
   display: flex;
@@ -22,7 +54,7 @@ nav {
   justify-content: center;
   align-items: center;
   column-gap: 30px;
-  row-gap: 10px;
+  row-gap: 15px;
   margin-bottom: 40px;
   background: white;
   padding: 15px 20px;
@@ -44,16 +76,15 @@ nav a {
   white-space: nowrap;
 }
 
-nav a:hover{
-    background-color: #e8cef0;
-
+nav a:hover {
+  background-color: #e8cef0;
 }
+
 nav a:focus {
   background-color: #C6A0D2;
   color: white;
   outline: none;
 }
-
 
 #home {
   display: flex;
@@ -85,31 +116,47 @@ nav a:focus {
   margin-top: 10px;
 }
 
-
-h1, h2, h3 {
-  color: #6D9773;
-  margin-bottom: 1rem;
-  font-weight: 700;
-   font-family: 'Poppins', sans-serif;
-}
-body, p, li {
-  font-family: 'Roboto', sans-serif;
-}
-h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1.5px;
+.name-title {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
-h2 {
-  font-size: 2rem;
-  border-bottom: 3px solid #A3C4A8;
-  padding-bottom: 6px;
-  margin-bottom: 2rem;
+.first-name {
+  animation: slideFromLeft 1s ease forwards;
+  opacity: 0;
 }
 
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.last-name {
+  animation: slideFromRight 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .cv-link {
@@ -126,10 +173,14 @@ h3 {
 
 .cv-link:hover {
   background-color: #E8B4B8;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgb(185, 135, 135);
 }
 
 section {
   margin-bottom: 4rem;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 #projects .project-list {
@@ -144,6 +195,7 @@ section {
   border-radius: 15px;
   box-shadow: 0 2px 8px rgba(198, 160, 210, 0.15);
   transition: box-shadow 0.3s ease;
+  margin-bottom: 30px;
 }
 
 .project-card:hover {
@@ -169,7 +221,7 @@ section {
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(198, 160, 210, 0.15);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -207,7 +259,6 @@ section {
 .read-more:hover {
   color: #E8B4B8;
 }
-
 
 #contact {
   background: white;
@@ -282,6 +333,35 @@ section {
   color: #E8B4B8;
 }
 
+.contact-icons a {
+  color: #6D9773;
+  font-size: 2rem;
+  margin: 0 12px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.contact-icons a:hover {
+  color: #C6A0D2;
+  cursor: pointer;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #A3C4A8;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #6D9773;
+}
+
 footer {
   text-align: center;
   padding: 20px 10px;
@@ -291,10 +371,34 @@ footer {
   margin-top: 40px;
 }
 
+.fade-in {
+  animation: fadeInUp 1s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   #home {
     flex-direction: column;
     text-align: center;
+  }
+
+  #home h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .name-title {
+    justify-content: center;
   }
 
   #projects .project-list {
@@ -320,34 +424,7 @@ footer {
     height: 140px;
   }
 }
-.project-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
-  background-color: #A3C4A8;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.project-btn:hover {
-  background-color: #6D9773;
-}
-.contact-icons a {
-  color: #6D9773; /* your green */
-  font-size: 2rem; /* bigger icons */
-  margin: 0 12px;
-  transition: color 0.3s ease;
-  display: inline-block;
-}
-
-.contact-icons a:hover {
-  color: #C6A0D2; /* your purple hover */
-  cursor: pointer;
-}
-/* Color Scheme Explanation:
+/*
    - Primary Green (#6D9773): Represents growth, creativity, and calmness.
    - Soft Purple (#C6A0D2): Adds a touch of creativity and elegance.
    - Light Background (#F9F6F0): Keeps the site clean and easy on the eyes.
